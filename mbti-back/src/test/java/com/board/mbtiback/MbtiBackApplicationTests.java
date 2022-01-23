@@ -1,10 +1,10 @@
-package com.mbti.board;
+package com.board.mbtiback;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BoardApplicationTests {
+class MbtiBackApplicationTests {
 
 	@Test
 	void contextLoads() {

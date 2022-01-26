@@ -8,7 +8,7 @@
         </thead>
         <tbody v-for="item in items" :key="item.title">
             <td> <span v-html = "item.title"/> </td>
-            <td> <span v-html = "item.contents"/> </td>
+            <td> <span v-html = "item.content"/> </td>
         </tbody>
     </div>
 </template>

@@ -16,9 +16,8 @@ public class MainBoardServiceImpl implements MainBoardService{
     }
 
     @Override
-    public List<MainBoard> loadMainBoardContent() {
+    public List<MainBoard> retrieveMainBoardAll() {
         //testData
-
         List<MainBoard> mainBoardList = new ArrayList<>();
 
         for(int i = 0; i<5; i++) {

@@ -9,5 +9,5 @@ import java.util.List;
 public interface MainBoardService {
     public int createMainBoardContent(MainBoard mainBoard);
 
-    public List<MainBoard> loadMainBoardContent();
+    public List<MainBoard> retrieveMainBoardAll();
 }

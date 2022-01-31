@@ -10,7 +10,7 @@ import java.util.List;
 public class MainBoardServiceImpl implements MainBoardService{
 
     @Override
-    public int createMainBoardContent(MainBoard mainBoard){
+    public int createMainBoardContent(MainBoard mainBoard) {
         //데이터 생성
         return 1;
     }

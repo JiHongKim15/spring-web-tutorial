@@ -7,7 +7,8 @@ import java.util.List;
 
 
 public interface MainBoardService {
-    public int createMainBoardContent(MainBoard mainBoard);
 
     public List<MainBoard> retrieveMainBoardAll();
+    public int createMainBoardContent(MainBoard mainBoard);
+
 }

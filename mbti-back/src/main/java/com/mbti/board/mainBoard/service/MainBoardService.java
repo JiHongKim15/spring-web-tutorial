@@ -9,6 +9,9 @@ import java.util.List;
 public interface MainBoardService {
 
     public List<MainBoard> retrieveMainBoardAll();
+    public MainBoard retrieveMainBoard();
     public int createMainBoardContent(MainBoard mainBoard);
+    public int updateMainBoardContent(MainBoard mainBoard);
+    public int deleteMainBoardContent(int mainBoardNum);
 
 }

@@ -10,12 +10,6 @@ import java.util.List;
 public class MainBoardServiceImpl implements MainBoardService{
 
     @Override
-    public int createMainBoardContent(MainBoard mainBoard) {
-        //데이터 생성
-        return 1;
-    }
-
-    @Override
     public List<MainBoard> retrieveMainBoardAll() {
         //testData
         List<MainBoard> mainBoardList = new ArrayList<>();
@@ -31,4 +25,27 @@ public class MainBoardServiceImpl implements MainBoardService{
 
         return mainBoardList;
     }
+
+    @Override
+    public MainBoard retrieveMainBoard() {
+        return null;
+    }
+
+    @Override
+    public int createMainBoardContent(MainBoard mainBoard) {
+        //데이터 생성
+        return 1;
+    }
+
+    @Override
+    public int updateMainBoardContent(MainBoard mainBoard) {
+        return 0;
+    }
+
+    @Override
+    public int deleteMainBoardContent(int mainBoardNum) {
+        return 0;
+    }
+
+
 }

@@ -1,18 +1,22 @@
 <template>
-    <div id = "graph">
-        <b-card
-         v-for = "mainBoard in mainBoardList" :key = "mainBoard.title"
-         tag="article"
-         style="max-width: 20rem;"
-         class="mb-2"
-        >
-            <b-card-title>
-                {{mainBoard.title}}
-            </b-card-title>
-            <b-card-text>
-                {{mainBoard.content}}
-            </b-card-text>
-        </b-card>
+    <div id = "graph" style = "display: flex; ">
+            <b-card
+            v-for = "mainBoard in mainBoardList" :key = "mainBoard.title"
+            border-variant="primary"
+            tag="article"
+            style="width: 20rem; margin: 10px;"
+            class="mb-2"
+            >
+                <b-card-title>
+                    {{mainBoard.title}}
+                </b-card-title>
+                <b-card-text>
+                    {{mainBoard.content}}
+                    <br/>
+                    {{mainBoard.writer}}
+                </b-card-text>
+
+            </b-card>
     </div>
 </template>
 

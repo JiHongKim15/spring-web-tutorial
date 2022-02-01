@@ -1,6 +1,11 @@
 module.exports = {  
     devServer: {  
-      proxy: "http://localhost:8081"
+      proxy: {
+        '/':{
+          target:  "http://localhost:8081",
+          changeOrigin: true,
+        }
+      }
     },  
     chainWebpack: config => {  
       const svgRule = config.module.rule("svg");    

@@ -5,7 +5,9 @@
       <nameButton name = "지혜"></nameButton>
     </router-link>
     <br/>
-    <nameButton name = "지홍"></nameButton>
+    <router-link to="/JiHong">
+      <nameButton name = "지홍"></nameButton>
+    </router-link>
     <br/>
     <nameButton name = "기원"></nameButton>
     <br/>

@@ -1,12 +1,17 @@
 <template>
   <div class="wisdomMain">
-    <h1>Hi! this is wisdom's board page~</h1>
+    <wisdomHeader></wisdomHeader>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from "vue-property-decorator";
+import wisdomHeader from "../components/Wisdom/WisdomHeader.vue";
 
-
+@Component({
+  components: {
+    wisdomHeader,
+  },
+})
 export default class WisdomMain extends Vue {}
 </script>

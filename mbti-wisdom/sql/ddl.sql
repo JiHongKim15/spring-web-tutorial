@@ -20,6 +20,7 @@ CREATE TABLE `mbti`.`writing` (
   `board_id` INTEGER NOT NULL,
   `writer_id` VARCHAR(45) NOT NULL,
   `hits` Integer NULL DEFAULT 0,
+  `create_time` DATETIME DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`writing_id`)
 );
 drop table if exists `mbti`.`comment`;
@@ -28,5 +29,6 @@ CREATE TABLE `mbti`.`comment` (
   `comment_content` VARCHAR(100) NOT NULL,
   `writing_id` INTEGER NOT NULL,
   `commenter_id` VARCHAR(45) NOT NULL,
+  `create_time` DATETIME DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`comment_id`)
 );

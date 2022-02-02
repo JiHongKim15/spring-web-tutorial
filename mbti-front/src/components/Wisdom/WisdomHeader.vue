@@ -19,9 +19,12 @@
         <!-- Navbar dropdowns -->
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown text="MBTI">
-            <b-dropdown-item href="#">ESTJ</b-dropdown-item>
-            <b-dropdown-item href="#">ENFP</b-dropdown-item>
-            <b-dropdown-item href="#">ISTP</b-dropdown-item>
+            <b-dropdown-item
+              href="#"
+              v-for="board in boards"
+              :key="board.boardId"
+              >{{ board.boardName }}</b-dropdown-item
+            >
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
@@ -30,8 +33,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Vue } from "vue-property-decorator";
+import AxiosService from "../../service/axios.service";
 
-@Component
-export default class WisdomHeader extends Vue {}
+export default Vue.extend({
+  data() {
+    return {
+      boards: [],
+    };
+  },
+  async mounted() {
+    const response = await AxiosService.Instance.get("/mbtis/v1");
+    this.boards = response.data;
+  },
+});
 </script>

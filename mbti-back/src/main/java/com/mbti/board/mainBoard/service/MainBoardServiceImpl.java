@@ -1,39 +1,50 @@
 package com.mbti.board.mainBoard.service;
 
-import com.mbti.board.mainBoard.dto.MainBoard;
+import com.mbti.board.mainBoard.entity.MainBoard;
+import com.mbti.board.mainBoard.repository.MainBoardRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class MainBoardServiceImpl implements MainBoardService{
 
+    @Autowired
+    private MainBoardRepository mainBoardRepository;
+
     @Override
     public List<MainBoard> retrieveMainBoardAll() {
+
+        return mainBoardRepository.findAll();
+
+        /*
         //testData
-        List<MainBoard> mainBoardList = new ArrayList<>();
+
+        List<MainBoardEntity> mainBoardEntityList = new ArrayList<>();
 
         for(int i = 0; i<5; i++) {
-            mainBoardList.add(MainBoard.builder()
+            mainBoardEntityList.add(MainBoardEntity.builder()
                     .mainBoardNum(i)
+                    .title("title" + i)
                     .content("test" + i)
                     .writer("jh")
                     .build()
             );
         }
 
-        return mainBoardList;
+        return mainBoardEntityList;*/
     }
 
     @Override
-    public MainBoard retrieveMainBoard() {
+    public MainBoard retrieveMainBoard(int mainBoardNum) {
         return null;
     }
 
     @Override
     public int createMainBoardContent(MainBoard mainBoard) {
         //데이터 생성
+        mainBoardRepository.save(mainBoard);
         return 1;
     }
 

@@ -1,8 +1,7 @@
 package com.mbti.board.mainBoard.controller;
 
-import com.mbti.board.mainBoard.dto.MainBoard;
+import com.mbti.board.mainBoard.entity.MainBoard;
 import com.mbti.board.mainBoard.service.MainBoardService;
-import com.sun.tools.javac.Main;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,8 +19,9 @@ public class MainBoardController {
         return mainBoardSerivce.retrieveMainBoardAll();
     }
 
-    public MainBoard retrieveMainBoard(){
-        return mainBoardSerivce.retrieveMainBoard();
+    @GetMapping("/detail")
+    public MainBoard retrieveMainBoard(int mainBoardNum){
+        return mainBoardSerivce.retrieveMainBoard(mainBoardNum);
     }
 
     @PostMapping

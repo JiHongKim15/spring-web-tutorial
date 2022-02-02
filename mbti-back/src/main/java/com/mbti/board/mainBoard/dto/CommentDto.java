@@ -1,11 +1,11 @@
-package com.mbti.board.comment.dto;
+package com.mbti.board.mainBoard.dto;
 
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
-public class Comment {
+public class CommentDto {
 
     private int mainBoardNum;
     private String comment;

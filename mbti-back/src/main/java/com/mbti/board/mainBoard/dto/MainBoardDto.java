@@ -5,11 +5,12 @@ import lombok.Data;
 
 import java.util.Date;
 
-@Data
 @Builder
-public class MainBoard {
+@Data
+public class MainBoardDto {
 
     private int mainBoardNum;
+    private String title;
     private String content;
     private String writer;
     private Date writeTime;

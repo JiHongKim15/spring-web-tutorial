@@ -1,21 +1,20 @@
 <template>
-  <div class="wisdomBoard">
+  <div class="wisdomWritingPage">
     <wisdomHeader></wisdomHeader>
-    This is {{ $route.params.id }} page;
-    <router-link :to="`${$route.params.id}/write`"
-      ><button>write</button>
-    </router-link>
+    <wisdomWritingForm></wisdomWritingForm>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import wisdomWritingForm from "./WisdomWritingForm.vue";
 import wisdomHeader from "./WisdomHeader.vue";
 
 @Component({
   components: {
     wisdomHeader,
+    wisdomWritingForm,
   },
 })
-export default class WisdomBoard extends Vue {}
+export default class WisdomWritingPage extends Vue {}
 </script>

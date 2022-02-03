@@ -33,6 +33,11 @@ const routes: RouteConfig[] = [
     path: '/wisdom-board/:id',
     name: 'WisdomBoard',
     component: () => import('../components/Wisdom/WisdomBoard.vue'),
+  },
+  {
+    path: '/wisdom-board/:id/write',
+    name: 'WisdomWritingPage',
+    component: () => import('../components/Wisdom/WisdomWritingPage.vue'),
   }
 ];
 

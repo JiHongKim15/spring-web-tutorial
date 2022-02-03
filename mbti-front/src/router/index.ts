@@ -29,6 +29,11 @@ const routes: RouteConfig[] = [
     name: 'WisdomMain',
     component: () => import(/* webpackChunkName: "about" */ '../views/WisdomMain.vue'),
   },
+  {
+    path: '/wisdom-board/:id',
+    name: 'WisdomBoard',
+    component: () => import('../components/Wisdom/WisdomBoard.vue'),
+  }
 ];
 
 const router = new VueRouter({

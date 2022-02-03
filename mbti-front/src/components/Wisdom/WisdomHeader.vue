@@ -19,11 +19,10 @@
         <!-- Navbar dropdowns -->
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown text="MBTI">
-            <b-dropdown-item
-              href="#"
-              v-for="board in boards"
-              :key="board.boardId"
-              >{{ board.boardName }}</b-dropdown-item
+            <b-dropdown-item v-for="board in boards" :key="board.boardId"
+              ><router-link :to="`/wisdom-board/${board.boardId}`">{{
+                board.boardName
+              }}</router-link></b-dropdown-item
             >
           </b-nav-item-dropdown>
         </b-navbar-nav>

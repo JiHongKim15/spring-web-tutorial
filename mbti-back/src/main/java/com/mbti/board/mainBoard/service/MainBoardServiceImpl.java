@@ -2,12 +2,15 @@ package com.mbti.board.mainBoard.service;
 
 import com.mbti.board.mainBoard.entity.MainBoard;
 import com.mbti.board.mainBoard.repository.MainBoardRepository;
+import org.jboss.jandex.Main;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class MainBoardServiceImpl implements MainBoardService{
 
     @Autowired
@@ -15,48 +18,27 @@ public class MainBoardServiceImpl implements MainBoardService{
 
     @Override
     public List<MainBoard> retrieveMainBoardAll() {
-
         return mainBoardRepository.findAll();
-
-        /*
-        //testData
-
-        List<MainBoardEntity> mainBoardEntityList = new ArrayList<>();
-
-        for(int i = 0; i<5; i++) {
-            mainBoardEntityList.add(MainBoardEntity.builder()
-                    .mainBoardNum(i)
-                    .title("title" + i)
-                    .content("test" + i)
-                    .writer("jh")
-                    .build()
-            );
-        }
-
-        return mainBoardEntityList;*/
     }
 
     @Override
     public MainBoard retrieveMainBoard(int mainBoardNum) {
-        return null;
+        return mainBoardRepository.findByMainBoardNum(mainBoardNum);
     }
 
     @Override
-    public int createMainBoardContent(MainBoard mainBoard) {
-        //데이터 생성
-        mainBoardRepository.save(mainBoard);
-        return 1;
+    public MainBoard createMainBoardContent(MainBoard mainBoard) {
+        return mainBoardRepository.save(mainBoard);
     }
 
     @Override
-    public int updateMainBoardContent(MainBoard mainBoard) {
-        return 0;
+    public MainBoard updateMainBoardContent(MainBoard mainBoard) {
+        return mainBoardRepository.save(mainBoard);
     }
 
     @Override
-    public int deleteMainBoardContent(int mainBoardNum) {
-        return 0;
+    public void deleteMainBoardContent(int mainBoardNum) {
+        mainBoardRepository.deleteByMainBoardNum(mainBoardNum);
     }
-
 
 }

@@ -9,8 +9,8 @@ public interface MainBoardService {
 
     public List<MainBoard> retrieveMainBoardAll();
     public MainBoard retrieveMainBoard(int mainBoardNum);
-    public int createMainBoardContent(MainBoard mainBoard);
-    public int updateMainBoardContent(MainBoard mainBoard);
-    public int deleteMainBoardContent(int mainBoardNum);
+    public MainBoard createMainBoardContent(MainBoard mainBoard);
+    public MainBoard updateMainBoardContent(MainBoard mainBoard);
+    public void deleteMainBoardContent(int mainBoardNum);
 
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="wisdomMain">
+  <div class="wisdomBoard">
     <wisdomHeader></wisdomHeader>
     This is {{ $route.params.id }} page;
   </div>
@@ -14,5 +14,5 @@ import wisdomHeader from "./WisdomHeader.vue";
     wisdomHeader,
   },
 })
-export default class WisdomMain extends Vue {}
+export default class WisdomBoard extends Vue {}
 </script>

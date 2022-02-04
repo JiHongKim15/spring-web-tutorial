@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '../views/Home.vue';
 import JiHong from '../components/JiHong/JiHong.vue';
+import Detail from '../components/JiHong/Detail.vue';
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes: RouteConfig[] = [
     path: '/jihong',
     name: 'JiHong',
     component: JiHong,
+  },
+  {
+    path: '/jihong/:id',
+    name: 'Detail',
+    component: Detail,
   },
   {
     path: '/about',

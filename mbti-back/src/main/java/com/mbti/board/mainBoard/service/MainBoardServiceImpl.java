@@ -33,12 +33,23 @@ public class MainBoardServiceImpl implements MainBoardService{
 
     @Override
     public MainBoard updateMainBoardContent(MainBoard mainBoard) {
+        if(this.retrieveMainBoard(mainBoard.getMainBoardNum()) == null){
+            //수정 불가능한 경우
+            //에러 코드 출력
+            return null;
+        }
+
         return mainBoardRepository.save(mainBoard);
     }
 
     @Override
     public void deleteMainBoardContent(int mainBoardNum) {
-        mainBoardRepository.deleteByMainBoardNum(mainBoardNum);
+        if(this.retrieveMainBoard(mainBoardNum) == null){
+            //수정 불가능한 경우
+            //에러 코드 출력
+        }
+
+        else mainBoardRepository.deleteByMainBoardNum(mainBoardNum);
     }
 
 }

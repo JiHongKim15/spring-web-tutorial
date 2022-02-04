@@ -1,12 +1,12 @@
 <template>
-    <div id = "graph" style = "display: flex; ">
+    <div id = "graph">
+        <div v-for = "(mainBoard, i) in mainBoardList" :key =i>
             <b-card
-            v-for = "mainBoard in mainBoardList" :key = "mainBoard.mainBoardNum"
             border-variant="primary"
             tag="article"
-            style="width: 20rem; margin: 10px;"
+            style="width: 98%; margin: 10px;"
             class="mb-2"
-            @click="mainBoardDetail(mainboard.mainBoardNum)"
+            @click="mainBoardDetail(mainBoard.mainBoardNum.toString())"
             >
                 <b-card-title>
                     {{mainBoard.title}}
@@ -18,6 +18,7 @@
                 </b-card-text>
 
             </b-card>
+        </div>
     </div>
 </template>
 
@@ -32,8 +33,11 @@ export default Vue.extend({
         };
     },
     methods: {
-        detail(mainBoardNum: number){
+        mainBoardDetail(mainBoardNum: string){
             
+            this.$router.push({
+                    path: this.$route.path + "/" + mainBoardNum,
+            });
         }
     },
     async mounted() {
@@ -43,7 +47,3 @@ export default Vue.extend({
     
 });
 </script>
-
-<style>
-
-</style>

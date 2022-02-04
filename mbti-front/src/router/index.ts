@@ -18,7 +18,7 @@ const routes: RouteConfig[] = [
     component: JiHong,
   },
   {
-    path: '/jihong/:id',
+    path: '/jihong/:mainBoardNum',
     name: 'Detail',
     component: Detail,
   },

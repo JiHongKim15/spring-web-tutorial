@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <br/>
-    <nameButton name = "지혜"></nameButton>
+    <router-link :to = "{ name : 'WisdomMain' }">
+      <nameButton name = "지혜"></nameButton>
+    </router-link>
     <br/>
     <router-link to="/JiHong">
       <nameButton name = "지홍"></nameButton>

@@ -1,11 +1,12 @@
 <template>
     <div id = "graph" style = "display: flex; ">
             <b-card
-            v-for = "mainBoard in mainBoardList" :key = "mainBoard.title"
+            v-for = "mainBoard in mainBoardList" :key = "mainBoard.mainBoardNum"
             border-variant="primary"
             tag="article"
             style="width: 20rem; margin: 10px;"
             class="mb-2"
+            @click="mainBoardDetail(mainboard.mainBoardNum)"
             >
                 <b-card-title>
                     {{mainBoard.title}}
@@ -29,6 +30,11 @@ export default Vue.extend({
         return {
             mainBoardList: [],
         };
+    },
+    methods: {
+        detail(mainBoardNum: number){
+            
+        }
     },
     async mounted() {
         const response = await AxiosService.Instance.get('/v1');

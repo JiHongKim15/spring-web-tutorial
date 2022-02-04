@@ -1,5 +1,6 @@
 package com.mbti.board.mainBoard.entity;
 
+import com.sun.istack.NotNull;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,7 @@ public class MainBoard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull
     private int mainBoardNum;
 
     private String title;

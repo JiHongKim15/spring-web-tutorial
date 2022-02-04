@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '../views/Home.vue';
+import JiHong from '../components/JiHong/JiHong.vue';
 
 Vue.use(VueRouter);
 
@@ -11,6 +12,11 @@ const routes: RouteConfig[] = [
     component: Home,
   },
   {
+    path: '/jihong',
+    name: 'JiHong',
+    component: JiHong,
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting
@@ -18,6 +24,21 @@ const routes: RouteConfig[] = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
   },
+  {
+    path: '/wisdom-board',
+    name: 'WisdomMain',
+    component: () => import(/* webpackChunkName: "about" */ '../views/WisdomMain.vue'),
+  },
+  {
+    path: '/wisdom-board/:id',
+    name: 'WisdomBoard',
+    component: () => import('../components/Wisdom/WisdomBoard.vue'),
+  },
+  {
+    path: '/wisdom-board/:id/write',
+    name: 'WisdomWritingPage',
+    component: () => import('../components/Wisdom/WisdomWritingPage.vue'),
+  }
 ];
 
 const router = new VueRouter({

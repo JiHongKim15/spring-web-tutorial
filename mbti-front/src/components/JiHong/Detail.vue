@@ -29,3 +29,10 @@ export default Vue.extend({
     
 });
 </script>
+
+<style>
+@import "../../assets/css/main.css";
+/*
+@import "../../assets/js/main.js";
+*/
+</style>

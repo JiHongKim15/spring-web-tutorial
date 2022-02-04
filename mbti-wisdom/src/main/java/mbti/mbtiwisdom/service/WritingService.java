@@ -24,7 +24,7 @@ public class WritingService {
         return repository.findById(id);
     }
     @Transactional(readOnly = true)
-    public Optional<List<Writing>> getWritingListByBoardId(Integer boardId){
+    public List<Writing> getWritingListByBoardId(Integer boardId){
         return repository.findByBoardId(boardId);
     }
     @Transactional

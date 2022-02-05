@@ -5,7 +5,8 @@ module.exports = {
           target:  "http://localhost:8081",
           changeOrigin: true,
         }
-      }
+      },
+      historyApiFallback: true
     },  
     chainWebpack: config => {  
       const svgRule = config.module.rule("svg");    

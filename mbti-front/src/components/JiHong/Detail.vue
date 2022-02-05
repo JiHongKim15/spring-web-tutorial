@@ -32,8 +32,6 @@ export default Vue.extend({
             });
 
             this.$router.go(-1);
-            
-
         }
     },
     async mounted() {

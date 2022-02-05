@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,5 +26,6 @@ public class Writing {
     private Integer boardId;
     private String writerId;
     private Integer hits;
+    @CreationTimestamp
     private LocalDateTime createTime;
 }
